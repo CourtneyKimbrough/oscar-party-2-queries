@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+        <!-- The official Pico CSS stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.conditional.css">
+
+    <!-- The official Bootstrap utilities stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/twbs/bootstrap@main/dist/css/bootstrap-utilities.css">
+
+    <!-- Our modifications to default Pico CSS styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/firstdraft/pico.firstdraft.css@latest/pico.firstdraft.css">
+
     <title><%= content_for(:title) || "Oscar Party (Queries)" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,36 +31,52 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <strong>
-            <a href="/">
-              Oscar Party (Queries)
-            </a>
-          </strong>
-        </li>
-        <li>
-          <a href="/movies">
-            Movies
-          </a>
-        </li>
-        <li>
-          <a href="/directors">
-            Directors
-          </a>
-        </li>
-        <li>
-          <a href="/actors">
-            Actors
-          </a>
-        </li>
-      </ul>
-    </nav>
+  <body class="pico">
+    <header>
+      <div class="container-two-thirds">
+        <nav>
+          <ul>
+            <li>
+              <strong>
+                <a href="/">
+                  Oscar Party (Queries)
+                </a>
+              </strong>
+            </li>
+            <li>
+              <a href="/movies">
+                Movies
+              </a>
+            </li>
+            <li>
+              <a href="/directors">
+                Directors
+              </a>
+            </li>
+            <li>
+              <a href="/actors">
+                Actors
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <%= yield %>
+    <main>
+      <div class="container-two-thirds">
+        <%= yield %>
+      </div>
+    </main>
 
-    <a href="/about">About</a>
+    <footer>
+      <div class="container-two-thirds">
+        <div class="grid text-center">
+          <div>
+            <a href="/about">About</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
